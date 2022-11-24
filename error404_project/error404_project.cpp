@@ -6,6 +6,8 @@ using namespace std;
 
 int difficulty = 3;
 //Difficulty levels 1-5
+int streak = 0;
+int totalWins = 0;
 
 
 
@@ -34,16 +36,74 @@ void selectDifficulty()
     }
 }
 
-void startGame()
+void howToPlay()
 {
-
+    cout << "This is how you play Mathle:" << '\n';
+    cout << "1 You will be shown the answer of an equation with two hidden numbers" << '\n';
+    cout << "2 You will have to guess the numbers in the equation(0 is not an input option)" << '\n';
+    cout << "3 If you have correctly guessed a number it will be revealed" << '\n';
+    string input;
+    cout << "Enter 'back' to go the main menu:" << '\n';
+    cin >> input;
+    if (input != "back") cin >> input;
 }
 
-int generateRandomNum()
+int randomNumLevelEasy()
 {
     random_device rd;
-    uniform_int_distribution<int> dist(0, 9);
+    uniform_int_distribution<int> dist(50, 99);
     return dist(rd);
+}
+
+void startGame()
+{
+    if (difficulty == 1)
+    {
+        int answer = randomNumLevelEasy();
+        int guessCount = 0;
+        int num1, num2;
+        string gameString = "_ + _ = ";
+        string input;
+        cout << gameString << answer << '\n';
+        cout << "Guess the numbers:" << '\n';
+        while (guessCount < 3)
+        {
+            cin >> num1 >> num2;
+            guessCount++;
+            if (num1 + num2 == answer) {
+                cout << "Congratulations you won!" << '\n';
+                totalWins++;
+                streak++;
+                cout << "Total wins: " << totalWins << '\n';
+                cout << "Current streak: " << streak << '\n';
+                cout << "Enter 'back' to go the main menu or 'play' to play again" << '\n';
+                cin >> input;
+                if (input == "play") {
+                    clearScreen();
+                    startGame();
+                }
+                else if (input != "play" && input != "back") cin >> input;
+                break;
+            }
+            if(guessCount != 3){
+                cout << "Wrong! Try again" << '\n';
+            }
+            if (guessCount == 3) {
+                cout << "No more guesses left! You lost!" << '\n';
+                cout << "Streak reset" << '\n';
+                streak = 0;
+                cout << "Total wins: " << totalWins << '\n';
+                cout << "Enter 'back' to go the main menu or 'play' to play again" << '\n';
+                cin >> input;
+                if (input == "play") {
+                    clearScreen();
+                    startGame();
+                }
+                else if (input != "play" && input != "back") cin >> input;
+                break;
+            }
+        }
+    }
 }
 
 void mainMenu()
@@ -52,18 +112,19 @@ void mainMenu()
     cout << "Welcome to Mathle" << '\n';
     cout << "Current difficulty: " << difficulty << '\n';
     cout << "Please select an option:" << '\n';
-    cout << "1 Select difficulty" << '\n';
+    cout << "1 Difficulty settings" << '\n';
     cout << "2 Play Game" << '\n';
+    cout << "3 How to play the game" << '\n';
     cin >> choice;
     switch (choice)
     {
     case 1: clearScreen(); selectDifficulty(); break;
     case 2: clearScreen(); startGame(); break;
+    case 3: clearScreen(); howToPlay(); break;
+    default: cin >> choice;
     }
     clearScreen();
     mainMenu();
-        
- 
 }
 
 int main()
