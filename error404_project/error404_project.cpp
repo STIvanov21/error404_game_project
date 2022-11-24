@@ -14,7 +14,7 @@ void clearScreen()
     system("cls");
 }
 
-void selectDifficulty(int difficulty)
+void selectDifficulty()
 {
     cout << "Select difficulty" << "\n";
     cout << "1 Very Easy" << "\n";
@@ -32,7 +32,6 @@ void selectDifficulty(int difficulty)
     case 4: difficulty = 4; break;
     case 5: difficulty = 5; break;
     }
-    mainMenu();
 }
 
 void startGame()
@@ -49,21 +48,22 @@ int generateRandomNum()
 
 void mainMenu()
 {
+    int choice;
     cout << "Welcome to Mathle" << '\n';
-    cout << "Current difficulty: " << difficulty;
-    cout << "Please select and option:" << '\n';
+    cout << "Current difficulty: " << difficulty << '\n';
+    cout << "Please select an option:" << '\n';
     cout << "1 Select difficulty" << '\n';
     cout << "2 Play Game" << '\n';
-    int choice = 3;
-    while (choice != 1 && choice != 2)
+    cin >> choice;
+    switch (choice)
     {
-        cin >> choice;
-        switch (choice)
-        {
-        case 1: clearScreen(); selectDifficulty(difficulty); break;
-        case 2: clearScreen(); startGame(); break;
-        }
+    case 1: clearScreen(); selectDifficulty(); break;
+    case 2: clearScreen(); startGame(); break;
     }
+    clearScreen();
+    mainMenu();
+        
+ 
 }
 
 int main()
