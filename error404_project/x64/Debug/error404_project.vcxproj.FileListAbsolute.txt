@@ -1,2 +1,0 @@
-C:\Users\S1NG\source\repos\error404_project\x64\Debug\error404_project.exe
-C:\Users\S1NG\source\repos\error404_game_project\error404_project\x64\Debug\error404_project.exe

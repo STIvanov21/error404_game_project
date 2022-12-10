@@ -1,5 +1,0 @@
-﻿  error404_project.cpp
-C:\Users\S1NG\source\repos\error404_game_project\error404_project\error404_project.cpp(457,22): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-C:\Users\S1NG\source\repos\error404_game_project\error404_project\error404_project.cpp(461,40): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-C:\Users\S1NG\source\repos\error404_game_project\error404_project\error404_project.cpp(561): warning C4717: 'mainMenu': recursive on all control paths, function will cause runtime stack overflow
-  error404_project.vcxproj -> C:\Users\S1NG\source\repos\error404_game_project\error404_project\x64\Debug\error404_project.exe
