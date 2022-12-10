@@ -540,8 +540,19 @@ void mainMenu()
 {
         clearScreen();
         int choice;
-        cout << "Welcome to Mathle" << '\n';
-        cout << "Current difficulty: " << difficulty << '\n';
+        cout << "__      __   _                    _____      __  __      _   _    _" << '\n';
+        cout << "\\ \\    / /__| |__ ___ _ __  ___  |_   _|__  |  \\/  |__ _| |_| |_ | |___" << '\n';
+        cout << " \\ \\/\\/ / -_) / _/ _ \\ '  \\/ -_)   | |/ _ \\ | |\\/| / _` |  _| ' \\| / -_)" << '\n';
+        cout << "  \\_/\\_/\\___|_\\__\\___/_|_|_\\___|   |_|\\___/ |_|  |_\\__,_|\\__|_||_|_\\___|" << '\n';
+        cout << '\n';
+        cout << '\n';
+        switch (difficulty)
+        {
+        case 1:  cout << "Current difficulty: 1 (Very Easy)" << '\n'; break;
+        case 2:  cout << "Current difficulty: 2 (Easy)" << '\n'; break;
+        case 3:  cout << "Current difficulty: 3 (Normal)" << '\n'; break;
+        case 4:  cout << "Current difficulty: 4 (Hard)" << '\n'; break;
+        }
         cout << "Current streak: " << streak << '\n';
         cout << "Total wins: " << totalWins << '\n';
         cout << '\n' << "Please select an option:" << '\n';
