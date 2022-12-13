@@ -40,9 +40,10 @@ void howToPlay()
 {
         clearScreen();
         cout << "This is how you play Mathle:" << '\n';
-        cout << "1 You will be shown the answer of an equation with two hidden numbers" << '\n';
-        cout << "2 You will have to guess the numbers in the equation(0 is not an input option)" << '\n';
+        cout << "1 You will be shown the answer of an equation with N hidden numbers based on the difficulty you choose" << '\n';
+        cout << "2 You will have to guess the numbers in the equation (0 is not an input option)" << '\n';
         cout << "3 If you have correctly guessed a number it will be revealed" << '\n';
+        cout << "4 If you guess all numbers within the allowed tries you win" << '\n';
         string input;
         cout << "Enter 'back' to go the main menu:" << '\n';
         cin >> input;
@@ -138,7 +139,7 @@ void startGame()
                 cout << "Total wins: " << totalWins << '\n';
                 cout << "Enter 'back' to go the main menu or 'play' to play again" << '\n';
                 cin >> input;
-                cin >> input;
+                
                 if (input == "play") {
                     clearScreen();
                     startGame();
@@ -190,7 +191,6 @@ void startGame()
                 cout << "Total wins: " << totalWins << '\n';
                 cout << "Current streak: " << streak << '\n';
                 cout << "Enter 'back' to go the main menu or 'play' to play again" << '\n';
-                cin >> input;
                 cin >> input;
                 if (input == "play") {
                     clearScreen();
@@ -317,7 +317,6 @@ void startGame()
                 }
                 while (input != "play" && input != "back")
                 {
-                    cin >> input;
                     cin >> input;
                     if (input == "play") {
                         clearScreen();
